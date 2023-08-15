@@ -1,12 +1,12 @@
 const User = require('./User');
-const Project = require('./Project');
+const CrossSet = require('./CrossSet');
 
-User.hasMany(Project, {
+User.hasMany(CrossSet, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-Project.belongsTo(User, {
+CrossSet.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
