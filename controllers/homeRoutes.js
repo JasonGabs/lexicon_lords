@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { CrossSet, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all CrossSet data and JOIN with user data
     const CrossSetData = await CrossSet.findAll({
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/CrossSet/:id', async (req, res) => {
+router.get('/CrossSet/:id', withAuth, async (req, res) => {
   try {
     const CrossSetData = await  CrossSet.findByPk(req.params.id, {
       include: [
@@ -55,7 +55,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: CrossSet }],
     });
 
     const user = userData.get({ plain: true });
