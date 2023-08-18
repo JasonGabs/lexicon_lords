@@ -5,6 +5,22 @@
     "date_created": "2018-01-01",
     "user_id": 1
 
+  },
+
+  {
+    "name": "example crossword",
+    "configuration": "~~B~O~~~C!A~A~R~~~H!PINEAPPLE!P~A~N~~~R!L~N~G~~~R!E~A~E~~~Y!",
+    "date_created": "2018-01-01",
+    "user_id": 1
+
+  },
+
+  {
+    "name": "example crossword",
+    "configuration": "~~B~O~~~C!A~A~R~~~H!PINEAPPLE!P~A~N~~~R!L~N~G~~~R!E~A~E~~~Y!",
+    "date_created": "2018-01-01",
+    "user_id": 1
+
   }
 
 ]

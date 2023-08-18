@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
+ <!-- <link rel="stylesheet" href="/css/jass.css"> -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -34,6 +34,8 @@
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+  {{else}} 
+  <script src="/js/login.js"></script>
   {{/if}}
 </body>
 

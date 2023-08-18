@@ -15,11 +15,11 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const CrossSets = CrossSetData.map((CrossSet) => CrossSets.get({ plain: true }));
+    const CrossSets = CrossSetData.map((CrossSet) => CrossSet.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      CrossSet, 
+      CrossSets, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {

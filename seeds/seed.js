@@ -1,8 +1,8 @@
 const sequelize = require('../config/connection');
-const { User, Project } = require('../models');
+const { User, CrossSet } = require('../models');
 
 const userData = require('./userData.json');
-const projectData = require('./CrossSetData.json');
+const CrossSetData = require('./CrossSetData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -12,14 +12,13 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  const CrossSets = await CrossSet.bulkCreate(CrossSetData, {
+    individualHooks: true,
+    returning: true,
+  });
 
   process.exit(0);
 };
 
 seedDatabase();
+console.log('Seeds Loaded!');
