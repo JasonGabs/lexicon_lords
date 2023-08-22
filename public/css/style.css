@@ -1,3 +1,15 @@
+html{
+  background-color: #03012d;
+  color: 	#cdccd5;
+}
+
+footer{
+  background-color: #353457;
+}
+
+body{
+  background-color: #03012d;
+}
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
